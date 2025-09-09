@@ -48,6 +48,7 @@ public class MyFileWriter {
 
         createHiddenFile();
         createRegularFileInHiddenFolder();
+        printAboutMe();
     }
 
     public static void createHiddenFile() {
@@ -61,6 +62,14 @@ public class MyFileWriter {
     public static void createRegularFileInHiddenFolder() {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(".secret/ordinaryfile.txt"))) {
             bufferedWriter.write("CONFIDENTIAL: Gandhi's affair with Beyonce EXPOSED!!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printAboutMe() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("aboutMe.txt"))) {
+            bufferedWriter.write("My name is Chase\nI am a Mayer\nYo soy programador");
         } catch (IOException e) {
             e.printStackTrace();
         }
