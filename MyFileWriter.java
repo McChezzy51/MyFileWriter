@@ -75,6 +75,7 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
       
     public static void makeDirectory(String dirName) {
         File dir = new File(dirName);
