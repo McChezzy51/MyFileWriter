@@ -48,6 +48,7 @@ public class MyFileWriter {
 
         createHiddenFile();
         createRegularFileInHiddenFolder();
+        printAboutMe();
         makeDirectory("myDirectory");
     }
 
@@ -67,6 +68,14 @@ public class MyFileWriter {
         }
     }
 
+    public static void printAboutMe() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("aboutMe.txt"))) {
+            bufferedWriter.write(
+                    "My name is Chase\nI am a Mayer\nYo soy programador. I am going to revolutionize your code with a vertically integrated AI B2B SAAS application from Stanford that will recieve 40 million in VC funding");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+      
     public static void makeDirectory(String dirName) {
         File dir = new File(dirName);
         if (dir.exists()) {
